@@ -57,6 +57,8 @@ public class Main{
         processFile();
         System.out.println(COUNT);
         in.close();
+        //RESPOSTA PARTE 1 - 1182
+        //RESPOSTA PARTE 2 - 6907
     }
 }
 
