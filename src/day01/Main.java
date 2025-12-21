@@ -26,23 +26,31 @@ public class Main{
             int value = Integer.parseInt(command.substring(1).trim());
             //--
             if(direction == LEFT){
-                DIAL_POSITION = (DIAL_POSITION - value) % 100;
-                if(DIAL_POSITION<0){ DIAL_POSITION+=100; }
+                for(int i = 0; i < value; i++) {
+                    DIAL_POSITION = (DIAL_POSITION - 1) % 100;
+                    if (DIAL_POSITION < 0) {
+                        DIAL_POSITION += 100;
+                    }
+                    verifyPosition();
+                }
             }
             if(direction == RIGHT){
-                DIAL_POSITION = (DIAL_POSITION + value) % 100;
+                for(int i = 0; i < value; i++) {
+                    DIAL_POSITION = (DIAL_POSITION + 1) % 100;
+                    verifyPosition();
+                }
             }
             //--
-            verifyPosition();
+
         }
     }
-    //--
     //--
     public static void verifyPosition(){
         if(DIAL_POSITION==0){
             COUNT++;
         }
     }
+    //--
     public static void main(String[] args) throws FileNotFoundException {
         Scanner in = new Scanner(new FileReader("src/day01/input.txt"));
         readFile(in);
