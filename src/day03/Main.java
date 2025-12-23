@@ -32,6 +32,6 @@ public class Main {
         System.out.println(TOTAL);
         in.close();
         //RESPOSTA PARTE 1 - 16973
-        //RESPOSTA PARTE 2 -
+        //RESPOSTA PARTE 2 - 168027167146027
     }
 }

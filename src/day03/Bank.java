@@ -19,21 +19,23 @@ public class Bank {
     //--
     public long getVoltage(){
         long voltage = 0;
-        int maxIndex = 0;
-        int max = 0;
-        int max_2 = 0;
-        for(int i = 0; i < 99; i++){
-            if(numbers[i]>max){
-                max = numbers[i];
-                maxIndex = i;
+        int indexStart = 0;
+        int total = 12;
+
+        for(int i = 0; i < total; i++) {
+            int max = -1;
+            int maxIndexFound = -1;
+            int limit = numbers.length - (total - i);
+            for(int j = indexStart; j <= limit; j++){
+                if(numbers[j] > max){
+                    max = numbers[j];
+                    maxIndexFound = j;
+                    if (max == 9) break;
+                }
             }
+            voltage = (voltage * 10) + max;
+            indexStart = maxIndexFound + 1;
         }
-        for(int i = maxIndex+1; i < 100; i++){
-            if(numbers[i]>max_2){
-                max_2 = numbers[i];
-            }
-        }
-        voltage = max*10L + max_2;
         return voltage;
     }
 }
