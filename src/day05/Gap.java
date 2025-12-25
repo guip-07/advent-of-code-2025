@@ -10,8 +10,15 @@ public class Gap {
         end = Long.parseLong(split[1]);
     }
     //--
-    public boolean checkGAP(long number){
-        if((number >= start)&&(number <= end)) return true;
-        return false;
+    public long getStart() {
+        return start;
+    }
+    //--
+    public long getEnd() {
+        return end;
+    }
+    //--
+    public long getRange(){
+        return (end-start+1);
     }
 }
